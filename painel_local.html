@@ -603,6 +603,29 @@
                 width: 100%;
             }
         }
+
+        /* Header das Intimações */
+        .intimacoes-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .intimacoes-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-small {
+            padding: 6px 12px;
+            font-size: 0.9rem;
+            min-width: auto;
+        }
+
+        .btn-small i {
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -624,23 +647,22 @@
             <div class="card">
                 <h2><i class="fas fa-download"></i> Extração de Intimações</h2>
                 <form id="extractForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="dataInicio">Data Início</label>
-                            <input type="date" id="dataInicio" name="dataInicio" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="dataFim">Data Fim</label>
-                            <input type="date" id="dataFim" name="dataFim" required>
-                        </div>
-                    </div>
                     <div class="form-group">
                         <label for="tipoExtracao">Tipo de Extração</label>
                         <select id="tipoExtracao" name="tipoExtracao">
                             <option value="diaria">Extração Diária (Padrão)</option>
                             <option value="personalizada">Período Personalizado</option>
-                            <option value="historica">Recuperação Histórica</option>
                         </select>
+                    </div>
+                    <div class="form-row" id="camposDatas" style="display: none;">
+                        <div class="form-group">
+                            <label for="dataInicio">Data Início</label>
+                            <input type="date" id="dataInicio" name="dataInicio">
+                        </div>
+                        <div class="form-group">
+                            <label for="dataFim">Data Fim</label>
+                            <input type="date" id="dataFim" name="dataFim">
+                        </div>
                     </div>
                     <div class="form-group">
                         <label style="display: flex; align-items: center; gap: 8px;">
@@ -712,7 +734,17 @@
             </div>
 
             <!-- Tabela de Intimações -->
-            <h2><i class="fas fa-list"></i> Todas as Intimações</h2>
+            <div class="intimacoes-header">
+                <h2><i class="fas fa-list"></i> Todas as Intimações</h2>
+                <div class="intimacoes-controls">
+                    <button id="btnExpandirIntimacoes" class="btn btn-small" style="display: none;">
+                        <i class="fas fa-chevron-down"></i> <span id="textoBtnExpandir">Ver Todas</span>
+                    </button>
+                    <button id="btnAtualizarIntimacoes" class="btn btn-small">
+                        <i class="fas fa-sync-alt"></i> Atualizar Lista
+                    </button>
+                </div>
+            </div>
             <div style="overflow-x: auto;">
                 <table class="intimacoes-table" id="intimacoesTable">
                     <thead>
@@ -824,6 +856,9 @@
         // Estado da aplicação
         let isOnline = false;
         let logs = [];
+        let intimacoesCompletas = [];
+        let intimacoesLimitadas = true;
+        const LIMITE_INICIAL = 10;
 
         // Elementos DOM
         const extractForm = document.getElementById('extractForm');
@@ -841,6 +876,40 @@
                 addLog('🔄 Aplicando filtro de Eduardo único...');
                 setTimeout(() => atualizarDados(), 100);
             }
+        });
+        
+        // Controlar visibilidade dos campos de data
+        document.getElementById('tipoExtracao').addEventListener('change', function() {
+            const camposDatas = document.getElementById('camposDatas');
+            const dataInicio = document.getElementById('dataInicio');
+            const dataFim = document.getElementById('dataFim');
+            
+            if (this.value === 'personalizada') {
+                camposDatas.style.display = 'flex';
+                dataInicio.required = true;
+                dataFim.required = true;
+            } else {
+                camposDatas.style.display = 'none';
+                dataInicio.required = false;
+                dataFim.required = false;
+            }
+        });
+
+        // Botão expandir intimações
+        document.getElementById('btnExpandirIntimacoes').addEventListener('click', function() {
+            if (intimacoesLimitadas) {
+                // Mostrar todas
+                mostrarTodasIntimacoes();
+            } else {
+                // Mostrar limitadas
+                mostrarIntimacaoesLimitadas();
+            }
+        });
+
+        // Botão atualizar intimações
+        document.getElementById('btnAtualizarIntimacoes').addEventListener('click', function() {
+            addLog('🔄 Atualizando lista de intimações...');
+            atualizarListaIntimacoes();
         });
 
         // Inicializar datas (deixar vazias)
@@ -863,10 +932,17 @@
             const dataFim = formData.get('dataFim');
             const tipo = formData.get('tipoExtracao');
 
-            // Validar datas
-            if (new Date(dataInicio) > new Date(dataFim)) {
-                showNotification('Data de início deve ser anterior à data fim.', 'error');
-                return;
+            // Validar datas apenas para período personalizado
+            if (tipo === 'personalizada') {
+                if (!dataInicio || !dataFim) {
+                    showNotification('Para período personalizado, selecione data de início e fim.', 'error');
+                    return;
+                }
+                
+                if (new Date(dataInicio) > new Date(dataFim)) {
+                    showNotification('Data de início deve ser anterior à data fim.', 'error');
+                    return;
+                }
             }
 
             const btn = document.getElementById('btnExtrair');
@@ -874,12 +950,16 @@
             
             try {
                 setLoading(btn, spinner, true);
-                addLog(`🚀 Iniciando extração ${tipo}: ${dataInicio} até ${dataFim}`);
+                
+                let logMessage = tipo === 'personalizada' ? 
+                    `🚀 Iniciando extração ${tipo}: ${dataInicio} até ${dataFim}` :
+                    `🚀 Iniciando extração ${tipo}`;
+                addLog(logMessage);
                 
                 let endpoint = '/extrair';
                 let params = { 
-                    dataInicio, 
-                    dataFim,
+                    dataInicio: tipo === 'personalizada' ? dataInicio : null, 
+                    dataFim: tipo === 'personalizada' ? dataFim : null,
                     tipo
                 };
 
@@ -898,10 +978,15 @@
                     addLog(`⏳ Processamento iniciado em segundo plano`);
                     showNotification('Extração iniciada com sucesso!', 'success');
                     
-                    // Atualizar dados após 5 segundos
+                    // Salvar filtros para usar após a extração
+                    filtrosAtivos.dataInicio = dataInicio;
+                    filtrosAtivos.dataFim = dataFim;
+                    filtrosAtivos.eduardoUnico = document.getElementById('filtroEduardoUnico').checked;
+                    
+                    // Atualizar dados após 5 segundos usando os filtros do período extraído
                     setTimeout(() => {
-                        addLog('🔄 Atualizando dados...');
-                        atualizarDados();
+                        addLog(`🔄 Atualizando dados para período ${dataInicio} a ${dataFim}...`);
+                        atualizarDadosComPeriodo();
                     }, 5000);
                 } else {
                     throw new Error(data.erro || 'Erro desconhecido');
@@ -999,7 +1084,7 @@
                 
                 // Buscar todas as intimações (com filtro Eduardo se ativo)
                 const ultimas = await buscarIntimacoesComFiltro(100);
-                updateIntimacoesTable(ultimas);
+                updateIntimacoesTable(ultimas, true);
                 addLog(`📄 Carregadas ${ultimas.length} intimações`);
                 
                 // Buscar estatísticas por tribunal
@@ -1018,6 +1103,64 @@
                 updateConnectionStatus(false);
             } finally {
                 setLoading(btn, spinner, false);
+            }
+        }
+
+        // Função para atualizar dados com período específico (após extração)
+        async function atualizarDadosComPeriodo() {
+            try {
+                // Testar conectividade
+                const healthResponse = await fetch('/health');
+                if (!healthResponse.ok) throw new Error('API não disponível');
+                
+                updateConnectionStatus(true);
+                addLog('🔗 Conexão com sistema estabelecida');
+
+                // Buscar estatísticas gerais
+                const statsResponse = await fetch('/status');
+                const stats = await statsResponse.json();
+                
+                if (stats.status === 'success') {
+                    updateMetrics(stats);
+                    addLog(`📊 Stats: ${stats.total_intimacoes || 0} intimações, ${stats.tribunais_ativos || 0} tribunais`);
+                }
+                
+                // Buscar intimações do período especificado
+                if (filtrosAtivos.dataInicio && filtrosAtivos.dataFim) {
+                    const intimacoesPeriodo = await buscarIntimacoesComFiltro(
+                        100, 
+                        null, 
+                        filtrosAtivos.dataInicio, 
+                        filtrosAtivos.dataFim
+                    );
+                    updateIntimacoesTable(intimacoesPeriodo, true);
+                    addLog(`📄 Carregadas ${intimacoesPeriodo.length} intimações do período ${filtrosAtivos.dataInicio} a ${filtrosAtivos.dataFim}`);
+                    
+                    if (intimacoesPeriodo.length === 0) {
+                        showNotification(`Nenhuma intimação encontrada para o período ${filtrosAtivos.dataInicio} a ${filtrosAtivos.dataFim}`, 'error');
+                    } else {
+                        showNotification(`${intimacoesPeriodo.length} intimações encontradas no período especificado`, 'success');
+                    }
+                } else {
+                    // Fallback para busca geral
+                    const ultimas = await buscarIntimacoesComFiltro(100);
+                    updateIntimacoesTable(ultimas, true);
+                    addLog(`📄 Carregadas ${ultimas.length} intimações gerais`);
+                }
+                
+                // Buscar estatísticas por tribunal
+                const tribunalResponse = await fetch('/estatisticas/tribunal');
+                if (tribunalResponse.ok) {
+                    const tribunalStats = await tribunalResponse.json();
+                    updateTribunaisStats(tribunalStats);
+                    addLog(`📈 Estatísticas carregadas para ${tribunalStats.length} tribunais`);
+                }
+                
+                addLog('✅ Atualização com período específico realizada');
+            } catch (error) {
+                addLog(`❌ Erro ao atualizar com período: ${error.message}`);
+                showNotification(`Erro: ${error.message}`, 'error');
+                updateConnectionStatus(false);
             }
         }
 
@@ -1052,7 +1195,10 @@
             document.getElementById('ultimaExtracao').textContent = stats.ultima_extracao || 'Nunca';
         }
 
-        function updateIntimacoesTable(intimacoes) {
+        function updateIntimacoesTable(intimacoes, iniciarLimitado = true) {
+            // Armazenar intimações completas
+            intimacoesCompletas = intimacoes;
+            
             if (intimacoes.length === 0) {
                 intimacoesBody.innerHTML = `
                     <tr>
@@ -1061,10 +1207,85 @@
                         </td>
                     </tr>
                 `;
+                document.getElementById('btnExpandirIntimacoes').style.display = 'none';
                 return;
             }
 
-            intimacoesBody.innerHTML = intimacoes.map((intimacao, index) => `
+            const btnExpandir = document.getElementById('btnExpandirIntimacoes');
+            
+            // Se há mais de 10 intimações, sempre mostrar o botão
+            if (intimacoes.length > LIMITE_INICIAL) {
+                btnExpandir.style.display = 'inline-flex';
+                
+                if (iniciarLimitado) {
+                    // Mostrar apenas as primeiras 10
+                    mostrarIntimacaoesLimitadas();
+                } else {
+                    // Mostrar todas (manter estado atual)
+                    mostrarTodasIntimacoes();
+                }
+            } else {
+                // Menos de 10 intimações, mostrar todas e ocultar botão
+                btnExpandir.style.display = 'none';
+                intimacoesBody.innerHTML = intimacoes.map((intimacao, index) => `
+                    <tr style="margin-bottom: 10px;">
+                        <td>${intimacao.data_publicacao ? new Date(intimacao.data_publicacao + 'T00:00:00').toLocaleDateString('pt-BR') : 'N/A'}</td>
+                        <td><span class="tribunal-badge">${intimacao.tribunal || 'N/A'}</span></td>
+                        <td>${intimacao.numero_processo || 'N/A'}</td>
+                        <td>${intimacao.tipo_comunicacao || 'N/A'}</td>
+                        <td>${(intimacao.orgao_julgador || 'N/A').substring(0, 50)}${intimacao.orgao_julgador && intimacao.orgao_julgador.length > 50 ? '...' : ''}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary" onclick="abrirModal(${index})" 
+                                    style="font-size: 12px; padding: 4px 8px;">
+                                <i class="fas fa-eye"></i> Ver Conteúdo
+                            </button>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+            
+            // Armazenar intimações globalmente para uso no modal (sempre das completas)
+            window.intimacoesData = intimacoesCompletas;
+        }
+        
+        // Função para buscar intimações com filtros
+        // Estado global para filtros ativos
+        let filtrosAtivos = {
+            dataInicio: null,
+            dataFim: null,
+            eduardoUnico: false
+        };
+
+        async function buscarIntimacoesComFiltro(limite = 10, data = null, dataInicio = null, dataFim = null) {
+            const eduardoUnico = document.getElementById('filtroEduardoUnico').checked;
+            let url = `/intimacoes?limit=${limite}`;
+            
+            if (data) {
+                url += `&data=${data}`;
+            } else if (dataInicio && dataFim) {
+                url += `&data_inicio=${dataInicio}&data_fim=${dataFim}`;
+            } else if (dataInicio) {
+                url += `&data_inicio=${dataInicio}`;
+            } else if (dataFim) {
+                url += `&data_fim=${dataFim}`;
+            }
+            
+            if (eduardoUnico) {
+                url += `&eduardo_unico=true`;
+            }
+            
+            const response = await fetch(url);
+            if (response.ok) {
+                return await response.json();
+            }
+            throw new Error('Falha ao buscar intimações');
+        }
+
+        // Função para mostrar todas as intimações
+        function mostrarTodasIntimacoes() {
+            if (intimacoesCompletas.length === 0) return;
+            
+            intimacoesBody.innerHTML = intimacoesCompletas.map((intimacao, index) => `
                 <tr style="margin-bottom: 10px;">
                     <td>${intimacao.data_publicacao ? new Date(intimacao.data_publicacao + 'T00:00:00').toLocaleDateString('pt-BR') : 'N/A'}</td>
                     <td><span class="tribunal-badge">${intimacao.tribunal || 'N/A'}</span></td>
@@ -1080,28 +1301,48 @@
                 </tr>
             `).join('');
             
-            // Armazenar intimações globalmente para uso no modal
-            window.intimacoesData = intimacoes;
+            intimacoesLimitadas = false;
+            const btnExpandir = document.getElementById('btnExpandirIntimacoes');
+            btnExpandir.innerHTML = '<i class="fas fa-chevron-up"></i> Mostrar Menos';
         }
-        
-        // Função para buscar intimações com filtros
-        async function buscarIntimacoesComFiltro(limite = 10, data = null) {
-            const eduardoUnico = document.getElementById('filtroEduardoUnico').checked;
-            let url = `/intimacoes?limit=${limite}`;
+
+        // Função para mostrar intimações limitadas
+        function mostrarIntimacaoesLimitadas() {
+            if (intimacoesCompletas.length === 0) return;
             
-            if (data) {
-                url += `&data=${data}`;
-            }
+            const intimacoesParaMostrar = intimacoesCompletas.slice(0, LIMITE_INICIAL);
+            intimacoesBody.innerHTML = intimacoesParaMostrar.map((intimacao, index) => `
+                <tr style="margin-bottom: 10px;">
+                    <td>${intimacao.data_publicacao ? new Date(intimacao.data_publicacao + 'T00:00:00').toLocaleDateString('pt-BR') : 'N/A'}</td>
+                    <td><span class="tribunal-badge">${intimacao.tribunal || 'N/A'}</span></td>
+                    <td>${intimacao.numero_processo || 'N/A'}</td>
+                    <td>${intimacao.tipo_comunicacao || 'N/A'}</td>
+                    <td>${(intimacao.orgao_julgador || 'N/A').substring(0, 50)}${intimacao.orgao_julgador && intimacao.orgao_julgador.length > 50 ? '...' : ''}</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary" onclick="abrirModal(${index})" 
+                                style="font-size: 12px; padding: 4px 8px;">
+                            <i class="fas fa-eye"></i> Ver Conteúdo
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
             
-            if (eduardoUnico) {
-                url += `&eduardo_unico=true`;
+            intimacoesLimitadas = true;
+            const btnExpandir = document.getElementById('btnExpandirIntimacoes');
+            btnExpandir.innerHTML = '<i class="fas fa-chevron-down"></i> Ver Todas (' + intimacoesCompletas.length + ')';
+        }
+
+        // Função para atualizar apenas a lista de intimações
+        async function atualizarListaIntimacoes() {
+            try {
+                const intimacoes = await buscarIntimacoesComFiltro(100);
+                updateIntimacoesTable(intimacoes, true);
+                addLog(`📄 Lista atualizada: ${intimacoes.length} intimações carregadas`);
+                showNotification(`Lista atualizada: ${intimacoes.length} intimações`, 'success');
+            } catch (error) {
+                addLog(`❌ Erro ao atualizar lista: ${error.message}`);
+                showNotification(`Erro ao atualizar lista: ${error.message}`, 'error');
             }
-            
-            const response = await fetch(url);
-            if (response.ok) {
-                return await response.json();
-            }
-            throw new Error('Falha ao buscar intimações');
         }
 
         function updateTribunaisStats(stats) {

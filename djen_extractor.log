@@ -1,0 +1,692 @@
+2025-07-21 18:12:16 - djen_extractor - INFO - ✅ Sistema de logging configurado - Nível: INFO
+2025-07-21 18:12:16 - supabase_client - INFO - ✅ Conexão com Supabase estabelecida
+2025-07-21 18:12:16 - djen_extractor - INFO - ✅ DJENExtractor inicializado
+2025-07-21 18:12:16 - djen_extractor - INFO - ✅ DJENExtractor inicializado para API server
+2025-07-21 18:12:16 - djen_extractor - INFO - 📅 Agendador iniciado - Extração automática configurada para 06:00 diariamente
+2025-07-21 18:20:55 - djen_extractor - INFO - ✅ Sistema de logging configurado - Nível: INFO
+2025-07-21 18:20:55 - supabase_client - INFO - ✅ Conexão com Supabase estabelecida
+2025-07-21 18:20:55 - djen_extractor - INFO - ✅ DJENExtractor inicializado
+2025-07-21 18:20:55 - djen_extractor - INFO - ✅ DJENExtractor inicializado para API server
+2025-07-21 18:20:55 - djen_extractor - INFO - 📅 Agendador iniciado - Extração automática configurada para 06:00 diariamente
+2025-07-21 18:23:30 - djen_extractor - INFO - ✅ Sistema de logging configurado - Nível: INFO
+2025-07-21 18:23:30 - supabase_client - INFO - ✅ Conexão com Supabase estabelecida
+2025-07-21 18:23:30 - djen_extractor - INFO - ✅ DJENExtractor inicializado
+2025-07-21 18:23:30 - djen_extractor - INFO - ✅ DJENExtractor inicializado para API server
+2025-07-21 18:23:30 - djen_extractor - INFO - 📅 Agendador iniciado - Extração automática configurada para 06:00 diariamente
+2025-07-21 18:23:30 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.20.119.188:8000
+2025-07-21 18:23:30 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-21 18:26:31 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:26:31 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:26:31 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:26:31] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:26:31 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/testar - Origin: N/A
+2025-07-21 18:26:31 - djen_extractor - INFO - 🔍 Testando componentes do sistema...
+2025-07-21 18:26:31 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:26:31 - djen_api - INFO - Status Code: 200
+2025-07-21 18:26:31 - djen_api - INFO - Requisição bem-sucedida. Count: 15
+2025-07-21 18:26:31 - djen_api - INFO - ✅ Teste de conectividade: SUCESSO
+2025-07-21 18:26:31 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=id&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:26:31 - supabase_client - INFO - ✅ Teste de conexão Supabase: SUCESSO
+2025-07-21 18:26:31 - djen_extractor - INFO - Testes concluídos: {'api': True, 'supabase': True, 'text_processor': True}
+2025-07-21 18:26:31 - djen_extractor - INFO - ✅ Todos os componentes funcionando
+2025-07-21 18:26:31 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:26:31 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:26:31] "GET /testar HTTP/1.1" 200 -
+2025-07-21 18:26:31 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/status - Origin: N/A
+2025-07-21 18:26:31 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=id "HTTP/2 200 OK"
+2025-07-21 18:26:31 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:26:31 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=%2A&order=data_extracao.desc&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:26:31 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:26:31 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:26:31] "GET /status HTTP/1.1" 200 -
+2025-07-21 18:26:31 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&data=2025-07-21&eduardo_unico=true - Origin: N/A
+2025-07-21 18:26:32 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=eq.2025-07-21&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:26:32 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:26:32 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:26:32] "GET /intimacoes?limit=100&data=2025-07-21&eduardo_unico=true HTTP/1.1" 200 -
+2025-07-21 18:26:32 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&eduardo_unico=true - Origin: N/A
+2025-07-21 18:26:32 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:26:32 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:26:32 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:26:32] "GET /intimacoes?limit=100&eduardo_unico=true HTTP/1.1" 200 -
+2025-07-21 18:26:32 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/estatisticas/tribunal - Origin: N/A
+2025-07-21 18:26:32 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:26:32 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:26:32 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:26:32] "GET /estatisticas/tribunal HTTP/1.1" 200 -
+2025-07-21 18:26:41 - djen_extractor - INFO - API Request: POST http://localhost:8000/extrair - Origin: N/A
+2025-07-21 18:26:41 - djen_extractor - INFO - 🚀 Iniciando extração periodo_personalizado: 2025-07-07 até 2025-07-07
+2025-07-21 18:26:41 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:26:41 - djen_extractor - INFO - 🚀 Iniciando extração diária DJEN
+2025-07-21 18:26:41 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2025 18:26:41] "POST /extrair HTTP/1.1" 200 -
+2025-07-21 18:26:41 - djen_extractor - INFO - 📡 Buscando intimações na API...
+2025-07-21 18:26:41 - djen_api - INFO - Buscando em 5 registros OAB do Eduardo Koetz
+2025-07-21 18:26:41 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-07', 'dataDisponibilizacaoFim': '2025-07-07', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:26:44 - djen_api - INFO - Status Code: 200
+2025-07-21 18:26:44 - djen_api - INFO - Requisição bem-sucedida. Count: 5
+2025-07-21 18:26:44 - djen_api - INFO - Encontradas 5 intimações por nome
+2025-07-21 18:26:44 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '42934', 'ufOab': 'SC', 'dataDisponibilizacaoInicio': '2025-07-07', 'dataDisponibilizacaoFim': '2025-07-07', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:26:46 - djen_api - INFO - Status Code: 200
+2025-07-21 18:26:46 - djen_api - INFO - Requisição bem-sucedida. Count: 0
+2025-07-21 18:26:46 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '73409', 'ufOab': 'RS', 'dataDisponibilizacaoInicio': '2025-07-07', 'dataDisponibilizacaoFim': '2025-07-07', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:26:47 - djen_api - INFO - Status Code: 200
+2025-07-21 18:26:47 - djen_api - INFO - Requisição bem-sucedida. Count: 4
+2025-07-21 18:26:47 - djen_api - INFO - OAB 73409/RS: 4 total, 0 novos
+2025-07-21 18:26:47 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '72951', 'ufOab': 'PR', 'dataDisponibilizacaoInicio': '2025-07-07', 'dataDisponibilizacaoFim': '2025-07-07', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:26:47 - djen_api - INFO - Status Code: 200
+2025-07-21 18:26:47 - djen_api - INFO - Requisição bem-sucedida. Count: 0
+2025-07-21 18:26:47 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '435266', 'ufOab': 'SP', 'dataDisponibilizacaoInicio': '2025-07-07', 'dataDisponibilizacaoFim': '2025-07-07', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:26:48 - djen_api - INFO - Status Code: 200
+2025-07-21 18:26:48 - djen_api - INFO - Requisição bem-sucedida. Count: 0
+2025-07-21 18:26:48 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '204531', 'ufOab': 'MG', 'dataDisponibilizacaoInicio': '2025-07-07', 'dataDisponibilizacaoFim': '2025-07-07', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:26:48 - djen_api - INFO - Status Code: 200
+2025-07-21 18:26:48 - djen_api - INFO - Requisição bem-sucedida. Count: 0
+2025-07-21 18:26:48 - djen_api - INFO - Total de intimações únicas encontradas: 5
+2025-07-21 18:26:48 - djen_extractor - INFO - 📋 Total encontrado na API: 5
+2025-07-21 18:26:48 - djen_extractor - INFO - ⚙️ Processando intimações...
+2025-07-21 18:26:48 - djen_extractor - INFO - ✅ Processadas 5 intimações válidas
+2025-07-21 18:26:48 - djen_extractor - INFO - 💾 Armazenando no Supabase...
+2025-07-21 18:26:48 - supabase_client - INFO - Processando 5 intimações
+2025-07-21 18:26:48 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.317789911&or=%28hash_conteudo.eq.KOdGxm7g6mjF3xgc1T7myDkZy5DBkl%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:26:48 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:26:48 - supabase_client - INFO - ✅ Intimação 317789911 inserida com sucesso
+2025-07-21 18:26:48 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.318552557&or=%28hash_conteudo.eq.Ekj97AdKZWxSM7GUQTOedKkYeLPQ1G%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:26:48 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:26:48 - supabase_client - INFO - ✅ Intimação 318552557 inserida com sucesso
+2025-07-21 18:26:48 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.317308472&or=%28hash_conteudo.eq.rEbP1yJdRlPUmDKc1T7EKwzReXxa8G%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:26:48 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:26:48 - supabase_client - INFO - ✅ Intimação 317308472 inserida com sucesso
+2025-07-21 18:26:48 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.317595374&or=%28hash_conteudo.eq.JqKnM28ZB2U4DqLTOTBmp2kZWjAkoy%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:26:48 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:26:48 - supabase_client - INFO - ✅ Intimação 317595374 inserida com sucesso
+2025-07-21 18:26:48 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.317902930&or=%28hash_conteudo.eq.JqKnM28RB2U4P3biOTBmp2kRWjAkoy%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:26:48 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:26:48 - supabase_client - INFO - ✅ Intimação 317902930 inserida com sucesso
+2025-07-21 18:26:48 - supabase_client - INFO - Processamento concluído: 5 inseridas, 0 duplicatas, 0 erros
+2025-07-21 18:26:48 - djen_extractor - INFO - 🎉 Extração concluída com sucesso!
+2025-07-21 18:26:48 - djen_extractor - INFO - 📊 Resumo: 5 encontradas, 5 novas, 0 duplicadas, 0 erros
+2025-07-21 18:26:49 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen "HTTP/2 201 Created"
+2025-07-21 18:26:49 - supabase_client - INFO - ✅ Log de execução registrado
+2025-07-21 18:26:49 - djen_extractor - INFO - ✅ Extração concluída: {'inicio_execucao': '2025-07-21T18:26:41.100665', 'status_execucao': 'sucesso', 'total_encontradas': 5, 'total_novas': 5, 'total_duplicadas': 0, 'total_erros': 0, 'tempo_execucao_segundos': 7, 'parametros_busca': {'data_inicio': '2025-07-07', 'data_fim': '2025-07-07'}, 'detalhes_erros': [], 'fim_execucao': '2025-07-21T18:26:48.967289'}
+2025-07-21 18:27:02 - djen_extractor - INFO - API Request: GET http://localhost:8000/intimacoes?data_inicio=2025-07-07&data_fim=2025-07-07&limit=50 - Origin: N/A
+2025-07-21 18:27:03 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=gte.2025-07-07&data_publicacao=lte.2025-07-07&order=data_extracao.desc&limit=50 "HTTP/2 200 OK"
+2025-07-21 18:27:03 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:27:03 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2025 18:27:03] "GET /intimacoes?data_inicio=2025-07-07&data_fim=2025-07-07&limit=50 HTTP/1.1" 200 -
+2025-07-21 18:28:32 - djen_extractor - INFO - ✅ Sistema de logging configurado - Nível: INFO
+2025-07-21 18:28:32 - supabase_client - INFO - ✅ Conexão com Supabase estabelecida
+2025-07-21 18:28:32 - djen_extractor - INFO - ✅ DJENExtractor inicializado
+2025-07-21 18:28:32 - djen_extractor - INFO - ✅ DJENExtractor inicializado para API server
+2025-07-21 18:28:32 - djen_extractor - INFO - 📅 Agendador iniciado - Extração automática configurada para 06:00 diariamente
+2025-07-21 18:28:32 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://172.20.119.188:8000
+2025-07-21 18:28:32 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-21 18:28:37 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/ - Origin: N/A
+2025-07-21 18:28:37 - djen_extractor - INFO - API Response: 304
+2025-07-21 18:28:37 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:37] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-21 18:28:39 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:28:39 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:39 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:39] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:28:39 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:28:39 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:39 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:39] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:28:39 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/testar - Origin: N/A
+2025-07-21 18:28:39 - djen_extractor - INFO - 🔍 Testando componentes do sistema...
+2025-07-21 18:28:39 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:28:39 - djen_api - INFO - Status Code: 200
+2025-07-21 18:28:39 - djen_api - INFO - Requisição bem-sucedida. Count: 15
+2025-07-21 18:28:39 - djen_api - INFO - ✅ Teste de conectividade: SUCESSO
+2025-07-21 18:28:39 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=id&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:28:39 - supabase_client - INFO - ✅ Teste de conexão Supabase: SUCESSO
+2025-07-21 18:28:39 - djen_extractor - INFO - Testes concluídos: {'api': True, 'supabase': True, 'text_processor': True}
+2025-07-21 18:28:39 - djen_extractor - INFO - ✅ Todos os componentes funcionando
+2025-07-21 18:28:39 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:39 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:39] "GET /testar HTTP/1.1" 200 -
+2025-07-21 18:28:39 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/status - Origin: N/A
+2025-07-21 18:28:39 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=id "HTTP/2 200 OK"
+2025-07-21 18:28:39 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:28:39 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=%2A&order=data_extracao.desc&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:28:39 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:39 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:39] "GET /status HTTP/1.1" 200 -
+2025-07-21 18:28:39 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&data=2025-07-21 - Origin: N/A
+2025-07-21 18:28:39 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=eq.2025-07-21&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:28:39 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:39 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:39] "GET /intimacoes?limit=100&data=2025-07-21 HTTP/1.1" 200 -
+2025-07-21 18:28:39 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100 - Origin: N/A
+2025-07-21 18:28:39 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:28:39 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:39 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:39] "GET /intimacoes?limit=100 HTTP/1.1" 200 -
+2025-07-21 18:28:39 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/estatisticas/tribunal - Origin: N/A
+2025-07-21 18:28:40 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:28:40 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:40 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:40] "GET /estatisticas/tribunal HTTP/1.1" 200 -
+2025-07-21 18:28:55 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:28:55 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:55 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:55] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:28:55 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/testar - Origin: N/A
+2025-07-21 18:28:55 - djen_extractor - INFO - 🔍 Testando componentes do sistema...
+2025-07-21 18:28:55 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:28:55 - djen_api - INFO - Status Code: 200
+2025-07-21 18:28:55 - djen_api - INFO - Requisição bem-sucedida. Count: 15
+2025-07-21 18:28:55 - djen_api - INFO - ✅ Teste de conectividade: SUCESSO
+2025-07-21 18:28:55 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=id&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:28:55 - supabase_client - INFO - ✅ Teste de conexão Supabase: SUCESSO
+2025-07-21 18:28:55 - djen_extractor - INFO - Testes concluídos: {'api': True, 'supabase': True, 'text_processor': True}
+2025-07-21 18:28:55 - djen_extractor - INFO - ✅ Todos os componentes funcionando
+2025-07-21 18:28:55 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:55 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:55] "GET /testar HTTP/1.1" 200 -
+2025-07-21 18:28:55 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/status - Origin: N/A
+2025-07-21 18:28:55 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=id "HTTP/2 200 OK"
+2025-07-21 18:28:55 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:28:55 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=%2A&order=data_extracao.desc&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:28:55 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:55 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:55] "GET /status HTTP/1.1" 200 -
+2025-07-21 18:28:55 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&data=2025-07-21&eduardo_unico=true - Origin: N/A
+2025-07-21 18:28:55 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=eq.2025-07-21&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:28:55 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:55 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:55] "GET /intimacoes?limit=100&data=2025-07-21&eduardo_unico=true HTTP/1.1" 200 -
+2025-07-21 18:28:55 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&eduardo_unico=true - Origin: N/A
+2025-07-21 18:28:55 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:28:55 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:55 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:55] "GET /intimacoes?limit=100&eduardo_unico=true HTTP/1.1" 200 -
+2025-07-21 18:28:55 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/estatisticas/tribunal - Origin: N/A
+2025-07-21 18:28:55 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:28:55 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:28:55 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:28:55] "GET /estatisticas/tribunal HTTP/1.1" 200 -
+2025-07-21 18:29:17 - djen_extractor - INFO - API Request: POST http://172.20.119.188:8000/extrair - Origin: http://172.20.119.188:8000
+2025-07-21 18:29:17 - djen_extractor - INFO - 🚀 Iniciando extração personalizada: 2025-07-07 até 2025-07-07
+2025-07-21 18:29:17 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:29:17 - djen_extractor - INFO - 🚀 Iniciando extração diária DJEN
+2025-07-21 18:29:17 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:29:17] "POST /extrair HTTP/1.1" 200 -
+2025-07-21 18:29:17 - djen_extractor - INFO - 📡 Buscando intimações na API...
+2025-07-21 18:29:17 - djen_api - INFO - Buscando em 5 registros OAB do Eduardo Koetz
+2025-07-21 18:29:17 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-07', 'dataDisponibilizacaoFim': '2025-07-07', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:29:17 - djen_api - INFO - Status Code: 200
+2025-07-21 18:29:17 - djen_api - INFO - Requisição bem-sucedida. Count: 5
+2025-07-21 18:29:17 - djen_api - INFO - Encontradas 5 intimações por nome
+2025-07-21 18:29:17 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '42934', 'ufOab': 'SC', 'dataDisponibilizacaoInicio': '2025-07-07', 'dataDisponibilizacaoFim': '2025-07-07', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:29:17 - djen_api - INFO - Status Code: 200
+2025-07-21 18:29:17 - djen_api - INFO - Requisição bem-sucedida. Count: 0
+2025-07-21 18:29:17 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '73409', 'ufOab': 'RS', 'dataDisponibilizacaoInicio': '2025-07-07', 'dataDisponibilizacaoFim': '2025-07-07', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:29:17 - djen_api - INFO - Status Code: 200
+2025-07-21 18:29:17 - djen_api - INFO - Requisição bem-sucedida. Count: 4
+2025-07-21 18:29:17 - djen_api - INFO - OAB 73409/RS: 4 total, 0 novos
+2025-07-21 18:29:17 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '72951', 'ufOab': 'PR', 'dataDisponibilizacaoInicio': '2025-07-07', 'dataDisponibilizacaoFim': '2025-07-07', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:29:17 - djen_api - INFO - Status Code: 200
+2025-07-21 18:29:17 - djen_api - INFO - Requisição bem-sucedida. Count: 0
+2025-07-21 18:29:17 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '435266', 'ufOab': 'SP', 'dataDisponibilizacaoInicio': '2025-07-07', 'dataDisponibilizacaoFim': '2025-07-07', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:29:17 - djen_api - INFO - Status Code: 200
+2025-07-21 18:29:17 - djen_api - INFO - Requisição bem-sucedida. Count: 0
+2025-07-21 18:29:17 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '204531', 'ufOab': 'MG', 'dataDisponibilizacaoInicio': '2025-07-07', 'dataDisponibilizacaoFim': '2025-07-07', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:29:17 - djen_api - INFO - Status Code: 200
+2025-07-21 18:29:17 - djen_api - INFO - Requisição bem-sucedida. Count: 0
+2025-07-21 18:29:17 - djen_api - INFO - Total de intimações únicas encontradas: 5
+2025-07-21 18:29:17 - djen_extractor - INFO - 📋 Total encontrado na API: 5
+2025-07-21 18:29:17 - djen_extractor - INFO - ⚙️ Processando intimações...
+2025-07-21 18:29:17 - djen_extractor - INFO - ✅ Processadas 5 intimações válidas
+2025-07-21 18:29:17 - djen_extractor - INFO - 💾 Armazenando no Supabase...
+2025-07-21 18:29:17 - supabase_client - INFO - Processando 5 intimações
+2025-07-21 18:29:18 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.317789911&or=%28hash_conteudo.eq.KOdGxm7g6mjF3xgc1T7myDkZy5DBkl%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:29:18 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:29:18 - supabase_client - INFO - ✅ Intimação 317789911 inserida com sucesso
+2025-07-21 18:29:18 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.318552557&or=%28hash_conteudo.eq.Ekj97AdKZWxSM7GUQTOedKkYeLPQ1G%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:29:18 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:29:18 - supabase_client - INFO - ✅ Intimação 318552557 inserida com sucesso
+2025-07-21 18:29:18 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.317308472&or=%28hash_conteudo.eq.rEbP1yJdRlPUmDKc1T7EKwzReXxa8G%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:29:18 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:29:18 - supabase_client - INFO - ✅ Intimação 317308472 inserida com sucesso
+2025-07-21 18:29:18 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.317595374&or=%28hash_conteudo.eq.JqKnM28ZB2U4DqLTOTBmp2kZWjAkoy%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:29:18 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:29:18 - supabase_client - INFO - ✅ Intimação 317595374 inserida com sucesso
+2025-07-21 18:29:18 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.317902930&or=%28hash_conteudo.eq.JqKnM28RB2U4P3biOTBmp2kRWjAkoy%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:29:18 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:29:18 - supabase_client - INFO - ✅ Intimação 317902930 inserida com sucesso
+2025-07-21 18:29:18 - supabase_client - INFO - Processamento concluído: 5 inseridas, 0 duplicatas, 0 erros
+2025-07-21 18:29:18 - djen_extractor - INFO - 🎉 Extração concluída com sucesso!
+2025-07-21 18:29:18 - djen_extractor - INFO - 📊 Resumo: 5 encontradas, 5 novas, 0 duplicadas, 0 erros
+2025-07-21 18:29:18 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen "HTTP/2 201 Created"
+2025-07-21 18:29:18 - supabase_client - INFO - ✅ Log de execução registrado
+2025-07-21 18:29:18 - djen_extractor - INFO - ✅ Extração concluída: {'inicio_execucao': '2025-07-21T18:29:17.313206', 'status_execucao': 'sucesso', 'total_encontradas': 5, 'total_novas': 5, 'total_duplicadas': 0, 'total_erros': 0, 'tempo_execucao_segundos': 1, 'parametros_busca': {'data_inicio': '2025-07-07', 'data_fim': '2025-07-07'}, 'detalhes_erros': [], 'fim_execucao': '2025-07-21T18:29:18.727211'}
+2025-07-21 18:29:22 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:29:22 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:29:22 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:29:22] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:29:22 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/status - Origin: N/A
+2025-07-21 18:29:22 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=id "HTTP/2 200 OK"
+2025-07-21 18:29:22 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:29:22 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=%2A&order=data_extracao.desc&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:29:22 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:29:22 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:29:22] "GET /status HTTP/1.1" 200 -
+2025-07-21 18:29:22 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&data_inicio=2025-07-07&data_fim=2025-07-07&eduardo_unico=true - Origin: N/A
+2025-07-21 18:29:22 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=gte.2025-07-07&data_publicacao=lte.2025-07-07&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:29:22 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:29:22 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:29:22] "GET /intimacoes?limit=100&data_inicio=2025-07-07&data_fim=2025-07-07&eduardo_unico=true HTTP/1.1" 200 -
+2025-07-21 18:29:22 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/estatisticas/tribunal - Origin: N/A
+2025-07-21 18:29:22 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:29:22 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:29:22 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:29:22] "GET /estatisticas/tribunal HTTP/1.1" 200 -
+2025-07-21 18:31:07 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/ - Origin: N/A
+2025-07-21 18:31:07 - djen_extractor - INFO - API Response: 304
+2025-07-21 18:31:07 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:31:07] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-21 18:31:08 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:31:08 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:31:08 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:31:08] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:31:08 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:31:08 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:31:08 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:31:08] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:31:08 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/testar - Origin: N/A
+2025-07-21 18:31:08 - djen_extractor - INFO - 🔍 Testando componentes do sistema...
+2025-07-21 18:31:08 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:31:08 - djen_api - INFO - Status Code: 200
+2025-07-21 18:31:08 - djen_api - INFO - Requisição bem-sucedida. Count: 15
+2025-07-21 18:31:08 - djen_api - INFO - ✅ Teste de conectividade: SUCESSO
+2025-07-21 18:31:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=id&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:31:08 - supabase_client - INFO - ✅ Teste de conexão Supabase: SUCESSO
+2025-07-21 18:31:08 - djen_extractor - INFO - Testes concluídos: {'api': True, 'supabase': True, 'text_processor': True}
+2025-07-21 18:31:08 - djen_extractor - INFO - ✅ Todos os componentes funcionando
+2025-07-21 18:31:08 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:31:08 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:31:08] "GET /testar HTTP/1.1" 200 -
+2025-07-21 18:31:08 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/status - Origin: N/A
+2025-07-21 18:31:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=id "HTTP/2 200 OK"
+2025-07-21 18:31:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:31:09 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=%2A&order=data_extracao.desc&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:31:09 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:31:09 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:31:09] "GET /status HTTP/1.1" 200 -
+2025-07-21 18:31:09 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&data=2025-07-21 - Origin: N/A
+2025-07-21 18:31:09 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=eq.2025-07-21&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:31:09 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:31:09 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:31:09] "GET /intimacoes?limit=100&data=2025-07-21 HTTP/1.1" 200 -
+2025-07-21 18:31:09 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100 - Origin: N/A
+2025-07-21 18:31:09 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:31:09 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:31:09 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:31:09] "GET /intimacoes?limit=100 HTTP/1.1" 200 -
+2025-07-21 18:31:09 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/estatisticas/tribunal - Origin: N/A
+2025-07-21 18:31:09 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:31:09 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:31:09 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:31:09] "GET /estatisticas/tribunal HTTP/1.1" 200 -
+2025-07-21 18:33:30 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/ - Origin: N/A
+2025-07-21 18:33:30 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:33:30 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:33:30] "GET / HTTP/1.1" 200 -
+2025-07-21 18:33:31 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:33:31 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:33:31 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:33:31] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:33:31 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:33:31 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:33:31 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:33:31] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:33:31 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/testar - Origin: N/A
+2025-07-21 18:33:31 - djen_extractor - INFO - 🔍 Testando componentes do sistema...
+2025-07-21 18:33:31 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:33:31 - djen_api - INFO - Status Code: 200
+2025-07-21 18:33:31 - djen_api - INFO - Requisição bem-sucedida. Count: 15
+2025-07-21 18:33:31 - djen_api - INFO - ✅ Teste de conectividade: SUCESSO
+2025-07-21 18:33:31 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=id&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:33:31 - supabase_client - INFO - ✅ Teste de conexão Supabase: SUCESSO
+2025-07-21 18:33:31 - djen_extractor - INFO - Testes concluídos: {'api': True, 'supabase': True, 'text_processor': True}
+2025-07-21 18:33:31 - djen_extractor - INFO - ✅ Todos os componentes funcionando
+2025-07-21 18:33:31 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:33:31 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:33:31] "GET /testar HTTP/1.1" 200 -
+2025-07-21 18:33:31 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/status - Origin: N/A
+2025-07-21 18:33:31 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=id "HTTP/2 200 OK"
+2025-07-21 18:33:31 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:33:31 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=%2A&order=data_extracao.desc&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:33:31 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:33:31 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:33:31] "GET /status HTTP/1.1" 200 -
+2025-07-21 18:33:31 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&data=2025-07-21 - Origin: N/A
+2025-07-21 18:33:31 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=eq.2025-07-21&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:33:31 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:33:31 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:33:31] "GET /intimacoes?limit=100&data=2025-07-21 HTTP/1.1" 200 -
+2025-07-21 18:33:31 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100 - Origin: N/A
+2025-07-21 18:33:31 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:33:31 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:33:31 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:33:31] "GET /intimacoes?limit=100 HTTP/1.1" 200 -
+2025-07-21 18:33:31 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/estatisticas/tribunal - Origin: N/A
+2025-07-21 18:33:31 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:33:31 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:33:31 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:33:31] "GET /estatisticas/tribunal HTTP/1.1" 200 -
+2025-07-21 18:35:03 - djen_extractor - INFO - API Request: POST http://172.20.119.188:8000/extrair - Origin: http://172.20.119.188:8000
+2025-07-21 18:35:03 - djen_extractor - INFO - 🚀 Iniciando extração personalizada: 2025-07-08 até 2025-07-08
+2025-07-21 18:35:03 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:35:03 - djen_extractor - INFO - 🚀 Iniciando extração diária DJEN
+2025-07-21 18:35:03 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:35:03] "POST /extrair HTTP/1.1" 200 -
+2025-07-21 18:35:03 - djen_extractor - INFO - 📡 Buscando intimações na API...
+2025-07-21 18:35:03 - djen_api - INFO - Buscando em 5 registros OAB do Eduardo Koetz
+2025-07-21 18:35:03 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-08', 'dataDisponibilizacaoFim': '2025-07-08', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:35:05 - djen_api - INFO - Status Code: 200
+2025-07-21 18:35:05 - djen_api - INFO - Requisição bem-sucedida. Count: 13
+2025-07-21 18:35:05 - djen_api - INFO - Encontradas 13 intimações por nome
+2025-07-21 18:35:05 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '42934', 'ufOab': 'SC', 'dataDisponibilizacaoInicio': '2025-07-08', 'dataDisponibilizacaoFim': '2025-07-08', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:35:05 - djen_api - INFO - Status Code: 200
+2025-07-21 18:35:05 - djen_api - INFO - Requisição bem-sucedida. Count: 2
+2025-07-21 18:35:05 - djen_api - INFO - OAB 42934/SC: 2 total, 0 novos
+2025-07-21 18:35:05 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '73409', 'ufOab': 'RS', 'dataDisponibilizacaoInicio': '2025-07-08', 'dataDisponibilizacaoFim': '2025-07-08', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:35:05 - djen_api - INFO - Status Code: 200
+2025-07-21 18:35:05 - djen_api - INFO - Requisição bem-sucedida. Count: 8
+2025-07-21 18:35:05 - djen_api - INFO - OAB 73409/RS: 8 total, 0 novos
+2025-07-21 18:35:05 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '72951', 'ufOab': 'PR', 'dataDisponibilizacaoInicio': '2025-07-08', 'dataDisponibilizacaoFim': '2025-07-08', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:35:05 - djen_api - INFO - Status Code: 200
+2025-07-21 18:35:05 - djen_api - INFO - Requisição bem-sucedida. Count: 0
+2025-07-21 18:35:05 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '435266', 'ufOab': 'SP', 'dataDisponibilizacaoInicio': '2025-07-08', 'dataDisponibilizacaoFim': '2025-07-08', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:35:06 - djen_api - INFO - Status Code: 200
+2025-07-21 18:35:06 - djen_api - INFO - Requisição bem-sucedida. Count: 2
+2025-07-21 18:35:06 - djen_api - INFO - OAB 435266/SP: 2 total, 0 novos
+2025-07-21 18:35:06 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '204531', 'ufOab': 'MG', 'dataDisponibilizacaoInicio': '2025-07-08', 'dataDisponibilizacaoFim': '2025-07-08', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:35:06 - djen_api - INFO - Status Code: 200
+2025-07-21 18:35:06 - djen_api - INFO - Requisição bem-sucedida. Count: 0
+2025-07-21 18:35:06 - djen_api - INFO - Total de intimações únicas encontradas: 13
+2025-07-21 18:35:06 - djen_extractor - INFO - 📋 Total encontrado na API: 13
+2025-07-21 18:35:06 - djen_extractor - INFO - ⚙️ Processando intimações...
+2025-07-21 18:35:06 - djen_extractor - INFO - ✅ Processadas 13 intimações válidas
+2025-07-21 18:35:06 - djen_extractor - INFO - 💾 Armazenando no Supabase...
+2025-07-21 18:35:06 - supabase_client - INFO - Processando 13 intimações
+2025-07-21 18:35:06 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.318918610&or=%28hash_conteudo.eq.rEbP1yJdRlli59Gh1T7EKwKReXxa8G%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:06 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:06 - supabase_client - INFO - ✅ Intimação 318918610 inserida com sucesso
+2025-07-21 18:35:06 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.319063692&or=%28hash_conteudo.eq.Q19VxvmEZMJFmx2ImT8oEmEY4eny8l%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:06 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:06 - supabase_client - INFO - ✅ Intimação 319063692 inserida com sucesso
+2025-07-21 18:35:06 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.317269680&or=%28hash_conteudo.eq.w37ay8AkYrGuyL9S5TwpbobR4dOjxN%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:06 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:06 - supabase_client - INFO - ✅ Intimação 317269680 inserida com sucesso
+2025-07-21 18:35:06 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.319343890&or=%28hash_conteudo.eq.qG7X2owQ6VrSzreu7TdlLBL6ek9aWL%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:06 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:06 - supabase_client - INFO - ✅ Intimação 319343890 inserida com sucesso
+2025-07-21 18:35:06 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.319491390&or=%28hash_conteudo.eq.geNaPz7wY5pFGyVU8T9ew7wZBMJpDr%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:06 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:06 - supabase_client - INFO - ✅ Intimação 319491390 inserida com sucesso
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.319715951&or=%28hash_conteudo.eq.qMO79lz36PmFnOwU3TgyoeoZmDByKE%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:07 - supabase_client - INFO - ✅ Intimação 319715951 inserida com sucesso
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.319779446&or=%28hash_conteudo.eq.qo8LEjMvZgXFE97s5TGKzJzYmrz2A1%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:07 - supabase_client - INFO - ✅ Intimação 319779446 inserida com sucesso
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.319000792&or=%28hash_conteudo.eq.voGJwMkORAXuEBMhbTGj9B9YKa931z%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:07 - supabase_client - INFO - ✅ Intimação 319000792 inserida com sucesso
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.319323359&or=%28hash_conteudo.eq.Ly1D82wNRyaUXgQunTkgONOR5eBjo9%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:07 - supabase_client - INFO - ✅ Intimação 319323359 inserida com sucesso
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.319596227&or=%28hash_conteudo.eq.Dbmx4M36qBU7bLrTyTJ1WOWZgozp85%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:07 - supabase_client - INFO - ✅ Intimação 319596227 inserida com sucesso
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.319420677&or=%28hash_conteudo.eq.MO79lz36PMseBVwC3TgyoeoZmDByKE%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:07 - supabase_client - INFO - ✅ Intimação 319420677 inserida com sucesso
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.319420688&or=%28hash_conteudo.eq.kj97AdKZWks5wmACQTOedKdZeLPQ1G%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:07 - supabase_client - INFO - ✅ Intimação 319420688 inserida com sucesso
+2025-07-21 18:35:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.319852663&or=%28hash_conteudo.eq.Kg5dkqmYL3UWGEqFmTwgzPzZ1NarD3%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:08 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:35:08 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:35:08 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:35:08] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:35:08 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:35:08 - supabase_client - INFO - ✅ Intimação 319852663 inserida com sucesso
+2025-07-21 18:35:08 - supabase_client - INFO - Processamento concluído: 13 inseridas, 0 duplicatas, 0 erros
+2025-07-21 18:35:08 - djen_extractor - INFO - 🎉 Extração concluída com sucesso!
+2025-07-21 18:35:08 - djen_extractor - INFO - 📊 Resumo: 13 encontradas, 13 novas, 0 duplicadas, 0 erros
+2025-07-21 18:35:08 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/status - Origin: N/A
+2025-07-21 18:35:08 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen "HTTP/2 201 Created"
+2025-07-21 18:35:08 - supabase_client - INFO - ✅ Log de execução registrado
+2025-07-21 18:35:08 - djen_extractor - INFO - ✅ Extração concluída: {'inicio_execucao': '2025-07-21T18:35:03.269210', 'status_execucao': 'sucesso', 'total_encontradas': 13, 'total_novas': 13, 'total_duplicadas': 0, 'total_erros': 0, 'tempo_execucao_segundos': 4, 'parametros_busca': {'data_inicio': '2025-07-08', 'data_fim': '2025-07-08'}, 'detalhes_erros': [], 'fim_execucao': '2025-07-21T18:35:08.063333'}
+2025-07-21 18:35:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=id "HTTP/2 200 OK"
+2025-07-21 18:35:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:35:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=%2A&order=data_extracao.desc&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:35:08 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:35:08 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:35:08] "GET /status HTTP/1.1" 200 -
+2025-07-21 18:35:08 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&data_inicio=2025-07-08&data_fim=2025-07-08 - Origin: N/A
+2025-07-21 18:35:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=gte.2025-07-08&data_publicacao=lte.2025-07-08&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:35:08 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:35:08 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:35:08] "GET /intimacoes?limit=100&data_inicio=2025-07-08&data_fim=2025-07-08 HTTP/1.1" 200 -
+2025-07-21 18:35:08 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/estatisticas/tribunal - Origin: N/A
+2025-07-21 18:35:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:35:08 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:35:08 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:35:08] "GET /estatisticas/tribunal HTTP/1.1" 200 -
+2025-07-21 18:36:06 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:36:06 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:06 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:06] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:36:06 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/testar - Origin: N/A
+2025-07-21 18:36:06 - djen_extractor - INFO - 🔍 Testando componentes do sistema...
+2025-07-21 18:36:06 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:36:06 - djen_api - INFO - Status Code: 200
+2025-07-21 18:36:06 - djen_api - INFO - Requisição bem-sucedida. Count: 15
+2025-07-21 18:36:06 - djen_api - INFO - ✅ Teste de conectividade: SUCESSO
+2025-07-21 18:36:06 - djen_extractor - INFO - API Request: POST http://172.20.119.188:8000/extrair - Origin: http://172.20.119.188:8000
+2025-07-21 18:36:06 - djen_extractor - INFO - 🚀 Iniciando extração diaria: None até None
+2025-07-21 18:36:06 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:06 - djen_extractor - INFO - 🚀 Iniciando extração diária DJEN
+2025-07-21 18:36:06 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:06] "POST /extrair HTTP/1.1" 200 -
+2025-07-21 18:36:06 - djen_extractor - INFO - 📡 Buscando intimações na API...
+2025-07-21 18:36:06 - djen_api - INFO - Buscando em 5 registros OAB do Eduardo Koetz
+2025-07-21 18:36:06 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:36:06 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=id&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:06 - supabase_client - INFO - ✅ Teste de conexão Supabase: SUCESSO
+2025-07-21 18:36:06 - djen_extractor - INFO - Testes concluídos: {'api': True, 'supabase': True, 'text_processor': True}
+2025-07-21 18:36:06 - djen_extractor - INFO - ✅ Todos os componentes funcionando
+2025-07-21 18:36:06 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:06 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:06] "GET /testar HTTP/1.1" 200 -
+2025-07-21 18:36:06 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/status - Origin: N/A
+2025-07-21 18:36:06 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=id "HTTP/2 200 OK"
+2025-07-21 18:36:06 - djen_api - INFO - Status Code: 200
+2025-07-21 18:36:06 - djen_api - INFO - Requisição bem-sucedida. Count: 15
+2025-07-21 18:36:06 - djen_api - INFO - Encontradas 15 intimações por nome
+2025-07-21 18:36:06 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '42934', 'ufOab': 'SC', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:36:06 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:36:06 - djen_api - INFO - Status Code: 200
+2025-07-21 18:36:06 - djen_api - INFO - Requisição bem-sucedida. Count: 1
+2025-07-21 18:36:06 - djen_api - INFO - OAB 42934/SC: 1 total, 0 novos
+2025-07-21 18:36:06 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '73409', 'ufOab': 'RS', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:36:06 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=%2A&order=data_extracao.desc&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:06 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:06 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:06] "GET /status HTTP/1.1" 200 -
+2025-07-21 18:36:06 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&data=2025-07-21&eduardo_unico=true - Origin: N/A
+2025-07-21 18:36:06 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=eq.2025-07-21&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:36:06 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:06 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:06] "GET /intimacoes?limit=100&data=2025-07-21&eduardo_unico=true HTTP/1.1" 200 -
+2025-07-21 18:36:06 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&eduardo_unico=true - Origin: N/A
+2025-07-21 18:36:06 - djen_api - INFO - Status Code: 200
+2025-07-21 18:36:06 - djen_api - INFO - Requisição bem-sucedida. Count: 8
+2025-07-21 18:36:06 - djen_api - INFO - OAB 73409/RS: 8 total, 0 novos
+2025-07-21 18:36:06 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '72951', 'ufOab': 'PR', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:36:06 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:36:06 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:06 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:06] "GET /intimacoes?limit=100&eduardo_unico=true HTTP/1.1" 200 -
+2025-07-21 18:36:06 - djen_api - INFO - Status Code: 200
+2025-07-21 18:36:06 - djen_api - INFO - Requisição bem-sucedida. Count: 0
+2025-07-21 18:36:06 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '435266', 'ufOab': 'SP', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:36:06 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/estatisticas/tribunal - Origin: N/A
+2025-07-21 18:36:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:36:07 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:07 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:07] "GET /estatisticas/tribunal HTTP/1.1" 200 -
+2025-07-21 18:36:07 - djen_api - INFO - Status Code: 200
+2025-07-21 18:36:07 - djen_api - INFO - Requisição bem-sucedida. Count: 2
+2025-07-21 18:36:07 - djen_api - INFO - OAB 435266/SP: 2 total, 0 novos
+2025-07-21 18:36:07 - djen_api - INFO - Fazendo requisição para API DJEN: {'numeroOab': '204531', 'ufOab': 'MG', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:36:07 - djen_api - INFO - Status Code: 200
+2025-07-21 18:36:07 - djen_api - INFO - Requisição bem-sucedida. Count: 0
+2025-07-21 18:36:07 - djen_api - INFO - Total de intimações únicas encontradas: 15
+2025-07-21 18:36:07 - djen_extractor - INFO - 📋 Total encontrado na API: 15
+2025-07-21 18:36:07 - djen_extractor - INFO - ⚙️ Processando intimações...
+2025-07-21 18:36:07 - djen_extractor - INFO - ✅ Processadas 15 intimações válidas
+2025-07-21 18:36:07 - djen_extractor - INFO - 💾 Armazenando no Supabase...
+2025-07-21 18:36:07 - supabase_client - INFO - Processando 15 intimações
+2025-07-21 18:36:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.329480342&or=%28hash_conteudo.eq.QJDEM7aXR89FkDCrTVzeL26oWe2dLw%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:07 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:07 - supabase_client - INFO - ✅ Intimação 329480342 inserida com sucesso
+2025-07-21 18:36:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.329502326&or=%28hash_conteudo.eq.2wyKMz7lRxxCyDSyTKB8mQREJaAPkr%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:07 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:07 - supabase_client - INFO - ✅ Intimação 329502326 inserida com sucesso
+2025-07-21 18:36:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.329594922&or=%28hash_conteudo.eq.wEp4n8Jx61mu3kBCeTaqEpw61ObAW3%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:07 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:07 - supabase_client - INFO - ✅ Intimação 329594922 inserida com sucesso
+2025-07-21 18:36:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.329834730&or=%28hash_conteudo.eq.wx71ANK4R2QF3obsAT91byEYrzBL3W%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:07 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:07 - supabase_client - INFO - ✅ Intimação 329834730 inserida com sucesso
+2025-07-21 18:36:07 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.329736253&or=%28hash_conteudo.eq.mone3zr86evSzJLi3TBXVDPZABQLjK%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:07 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:07 - supabase_client - INFO - ✅ Intimação 329736253 inserida com sucesso
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.329901572&or=%28hash_conteudo.eq.w37ay8AkRr3SVl4t5Twpbm564dOjxN%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:08 - supabase_client - INFO - ✅ Intimação 329901572 inserida com sucesso
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.330003906&or=%28hash_conteudo.eq.jqlwEO1dYOrSw3gcnTX32zoZDGMoWQ%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:08 - supabase_client - INFO - ✅ Intimação 330003906 inserida com sucesso
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.330320487&or=%28hash_conteudo.eq.rEbP1yJdYlzFyaau1T7EKnL6eXxa8G%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:08 - supabase_client - INFO - ✅ Intimação 330320487 inserida com sucesso
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.330324681&or=%28hash_conteudo.eq.on1OxBm7YErU5XdCaTpdy2MR3revpE%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:08 - supabase_client - INFO - ✅ Intimação 330324681 inserida com sucesso
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.330358272&or=%28hash_conteudo.eq.vLko4Pw1RXdU55quoTGjXkVRbAKq5V%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:08 - supabase_client - INFO - ✅ Intimação 330358272 inserida com sucesso
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.330433077&or=%28hash_conteudo.eq.geNaPz7wZ5vSV8XC8T9ewVNYBMJpDr%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:08 - supabase_client - INFO - ✅ Intimação 330433077 inserida com sucesso
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.330562657&or=%28hash_conteudo.eq.Ly1D82wNRyaUBnvinTkgODnR5eBjo9%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:08 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:08 - supabase_client - INFO - ✅ Intimação 330562657 inserida com sucesso
+2025-07-21 18:36:09 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.330327331&or=%28hash_conteudo.eq.QP4g8rBY7wsW5lGfqTzVnqKYn27bML%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:09 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:09 - supabase_client - INFO - ✅ Intimação 330327331 inserida com sucesso
+2025-07-21 18:36:09 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.330399786&or=%28hash_conteudo.eq.adD75Pq6DosLAVmuATgELO7RnyG1xN%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:09 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:09 - supabase_client - INFO - ✅ Intimação 330399786 inserida com sucesso
+2025-07-21 18:36:09 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&id_intimacao=eq.330467966&or=%28hash_conteudo.eq.5ljVaJnYkOslDWxcDTel2OaYAve9mD%29&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:09 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz "HTTP/2 201 Created"
+2025-07-21 18:36:09 - supabase_client - INFO - ✅ Intimação 330467966 inserida com sucesso
+2025-07-21 18:36:09 - supabase_client - INFO - Processamento concluído: 15 inseridas, 0 duplicatas, 0 erros
+2025-07-21 18:36:09 - djen_extractor - INFO - 🎉 Extração concluída com sucesso!
+2025-07-21 18:36:09 - djen_extractor - INFO - 📊 Resumo: 15 encontradas, 15 novas, 0 duplicadas, 0 erros
+2025-07-21 18:36:09 - httpx - INFO - HTTP Request: POST https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen "HTTP/2 201 Created"
+2025-07-21 18:36:09 - supabase_client - INFO - ✅ Log de execução registrado
+2025-07-21 18:36:09 - djen_extractor - INFO - ✅ Extração concluída: {'inicio_execucao': '2025-07-21T18:36:06.422336', 'status_execucao': 'sucesso', 'total_encontradas': 15, 'total_novas': 15, 'total_duplicadas': 0, 'total_erros': 0, 'tempo_execucao_segundos': 3, 'parametros_busca': {'data_inicio': None, 'data_fim': None}, 'detalhes_erros': [], 'fim_execucao': '2025-07-21T18:36:09.460829'}
+2025-07-21 18:36:11 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:36:11 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:11 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:11] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:36:11 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/status - Origin: N/A
+2025-07-21 18:36:11 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=id "HTTP/2 200 OK"
+2025-07-21 18:36:11 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:36:11 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=%2A&order=data_extracao.desc&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:11 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:11 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:11] "GET /status HTTP/1.1" 200 -
+2025-07-21 18:36:11 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&data_inicio=2025-07-08&data_fim=2025-07-08&eduardo_unico=true - Origin: N/A
+2025-07-21 18:36:11 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=gte.2025-07-08&data_publicacao=lte.2025-07-08&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:36:11 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:11 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:11] "GET /intimacoes?limit=100&data_inicio=2025-07-08&data_fim=2025-07-08&eduardo_unico=true HTTP/1.1" 200 -
+2025-07-21 18:36:11 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/estatisticas/tribunal - Origin: N/A
+2025-07-21 18:36:11 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:36:11 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:11 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:11] "GET /estatisticas/tribunal HTTP/1.1" 200 -
+2025-07-21 18:36:24 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/ - Origin: N/A
+2025-07-21 18:36:24 - djen_extractor - INFO - API Response: 304
+2025-07-21 18:36:24 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:24] "[36mGET / HTTP/1.1[0m" 304 -
+2025-07-21 18:36:25 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:36:25 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:25 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:25] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:36:25 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:36:25 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:25 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:25] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:36:25 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/testar - Origin: N/A
+2025-07-21 18:36:25 - djen_extractor - INFO - 🔍 Testando componentes do sistema...
+2025-07-21 18:36:25 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:36:25 - djen_api - INFO - Status Code: 200
+2025-07-21 18:36:25 - djen_api - INFO - Requisição bem-sucedida. Count: 15
+2025-07-21 18:36:25 - djen_api - INFO - ✅ Teste de conectividade: SUCESSO
+2025-07-21 18:36:26 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=id&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:26 - supabase_client - INFO - ✅ Teste de conexão Supabase: SUCESSO
+2025-07-21 18:36:26 - djen_extractor - INFO - Testes concluídos: {'api': True, 'supabase': True, 'text_processor': True}
+2025-07-21 18:36:26 - djen_extractor - INFO - ✅ Todos os componentes funcionando
+2025-07-21 18:36:26 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:26 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:26] "GET /testar HTTP/1.1" 200 -
+2025-07-21 18:36:26 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/status - Origin: N/A
+2025-07-21 18:36:26 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=id "HTTP/2 200 OK"
+2025-07-21 18:36:26 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:36:26 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=%2A&order=data_extracao.desc&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:36:26 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:26 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:26] "GET /status HTTP/1.1" 200 -
+2025-07-21 18:36:26 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&data=2025-07-21 - Origin: N/A
+2025-07-21 18:36:26 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=eq.2025-07-21&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:36:26 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:26 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:26] "GET /intimacoes?limit=100&data=2025-07-21 HTTP/1.1" 200 -
+2025-07-21 18:36:26 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100 - Origin: N/A
+2025-07-21 18:36:26 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:36:26 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:26 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:26] "GET /intimacoes?limit=100 HTTP/1.1" 200 -
+2025-07-21 18:36:26 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/estatisticas/tribunal - Origin: N/A
+2025-07-21 18:36:26 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:36:26 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:36:26 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:36:26] "GET /estatisticas/tribunal HTTP/1.1" 200 -
+2025-07-21 18:39:25 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/ - Origin: N/A
+2025-07-21 18:39:25 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:39:25 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:39:25] "GET / HTTP/1.1" 200 -
+2025-07-21 18:39:26 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:39:26 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:39:26 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:39:26] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:39:26 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:39:26 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:39:26 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:39:26] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:39:26 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/testar - Origin: N/A
+2025-07-21 18:39:26 - djen_extractor - INFO - 🔍 Testando componentes do sistema...
+2025-07-21 18:39:26 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:39:26 - djen_api - INFO - Status Code: 200
+2025-07-21 18:39:26 - djen_api - INFO - Requisição bem-sucedida. Count: 15
+2025-07-21 18:39:26 - djen_api - INFO - ✅ Teste de conectividade: SUCESSO
+2025-07-21 18:39:26 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=id&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:39:26 - supabase_client - INFO - ✅ Teste de conexão Supabase: SUCESSO
+2025-07-21 18:39:26 - djen_extractor - INFO - Testes concluídos: {'api': True, 'supabase': True, 'text_processor': True}
+2025-07-21 18:39:26 - djen_extractor - INFO - ✅ Todos os componentes funcionando
+2025-07-21 18:39:26 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:39:26 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:39:26] "GET /testar HTTP/1.1" 200 -
+2025-07-21 18:39:26 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/status - Origin: N/A
+2025-07-21 18:39:26 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=id "HTTP/2 200 OK"
+2025-07-21 18:39:26 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:39:26 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=%2A&order=data_extracao.desc&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:39:26 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:39:26 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:39:26] "GET /status HTTP/1.1" 200 -
+2025-07-21 18:39:26 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&data=2025-07-21 - Origin: N/A
+2025-07-21 18:39:27 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=eq.2025-07-21&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:39:27 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:39:27 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:39:27] "GET /intimacoes?limit=100&data=2025-07-21 HTTP/1.1" 200 -
+2025-07-21 18:39:27 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100 - Origin: N/A
+2025-07-21 18:39:27 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:39:27 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:39:27 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:39:27] "GET /intimacoes?limit=100 HTTP/1.1" 200 -
+2025-07-21 18:39:27 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/estatisticas/tribunal - Origin: N/A
+2025-07-21 18:39:27 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:39:27 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:39:27 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:39:27] "GET /estatisticas/tribunal HTTP/1.1" 200 -
+2025-07-21 18:40:59 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/ - Origin: N/A
+2025-07-21 18:40:59 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:40:59 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:40:59] "GET / HTTP/1.1" 200 -
+2025-07-21 18:41:00 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:41:00 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:41:00 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:41:00] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:41:00 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/health - Origin: N/A
+2025-07-21 18:41:00 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:41:00 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:41:00] "GET /health HTTP/1.1" 200 -
+2025-07-21 18:41:00 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/testar - Origin: N/A
+2025-07-21 18:41:00 - djen_extractor - INFO - 🔍 Testando componentes do sistema...
+2025-07-21 18:41:00 - djen_api - INFO - Fazendo requisição para API DJEN: {'nomeAdvogado': 'Eduardo Koetz', 'dataDisponibilizacaoInicio': '2025-07-20', 'dataDisponibilizacaoFim': '2025-07-21', 'itensPorPagina': 100, 'meio': 'D', 'pagina': 1}
+2025-07-21 18:41:00 - djen_api - INFO - Status Code: 200
+2025-07-21 18:41:00 - djen_api - INFO - Requisição bem-sucedida. Count: 15
+2025-07-21 18:41:00 - djen_api - INFO - ✅ Teste de conectividade: SUCESSO
+2025-07-21 18:41:00 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=id&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:41:00 - supabase_client - INFO - ✅ Teste de conexão Supabase: SUCESSO
+2025-07-21 18:41:00 - djen_extractor - INFO - Testes concluídos: {'api': True, 'supabase': True, 'text_processor': True}
+2025-07-21 18:41:00 - djen_extractor - INFO - ✅ Todos os componentes funcionando
+2025-07-21 18:41:00 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:41:00 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:41:00] "GET /testar HTTP/1.1" 200 -
+2025-07-21 18:41:00 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/status - Origin: N/A
+2025-07-21 18:41:00 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=id "HTTP/2 200 OK"
+2025-07-21 18:41:00 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:41:00 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/logs_extracao_djen?select=%2A&order=data_extracao.desc&limit=1 "HTTP/2 200 OK"
+2025-07-21 18:41:00 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:41:00 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:41:00] "GET /status HTTP/1.1" 200 -
+2025-07-21 18:41:00 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100&data=2025-07-21 - Origin: N/A
+2025-07-21 18:41:00 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&data_publicacao=eq.2025-07-21&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:41:00 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:41:00 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:41:00] "GET /intimacoes?limit=100&data=2025-07-21 HTTP/1.1" 200 -
+2025-07-21 18:41:00 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/intimacoes?limit=100 - Origin: N/A
+2025-07-21 18:41:00 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=%2A&order=data_extracao.desc&limit=100 "HTTP/2 200 OK"
+2025-07-21 18:41:00 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:41:00 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:41:00] "GET /intimacoes?limit=100 HTTP/1.1" 200 -
+2025-07-21 18:41:00 - djen_extractor - INFO - API Request: GET http://172.20.119.188:8000/estatisticas/tribunal - Origin: N/A
+2025-07-21 18:41:00 - httpx - INFO - HTTP Request: GET https://wyytijwavpwcesghpwhw.supabase.co/rest/v1/intimacoes_eduardo_koetz?select=tribunal "HTTP/2 200 OK"
+2025-07-21 18:41:00 - djen_extractor - INFO - API Response: 200
+2025-07-21 18:41:00 - werkzeug - INFO - 172.20.112.1 - - [21/Jul/2025 18:41:00] "GET /estatisticas/tribunal HTTP/1.1" 200 -

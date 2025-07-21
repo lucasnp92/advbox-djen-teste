@@ -52,13 +52,16 @@ class SupabaseClient:
             self.logger.error(f"❌ Teste de conexão Supabase falhou: {e}")
             return False
     
-    def buscar_intimacoes(self, limite: int = 10, data_especifica: str = None) -> List[Dict]:
+    def buscar_intimacoes(self, limite: int = 10, data_especifica: str = None, 
+                         data_inicio: str = None, data_fim: str = None) -> List[Dict]:
         """
         Busca intimações na base de dados
         
         Args:
             limite: Número máximo de intimações
             data_especifica: Filtrar por data específica (YYYY-MM-DD)
+            data_inicio: Data de início do período (YYYY-MM-DD)
+            data_fim: Data fim do período (YYYY-MM-DD)
             
         Returns:
             List[Dict]: Lista de intimações
@@ -68,6 +71,12 @@ class SupabaseClient:
             
             if data_especifica:
                 query = query.eq("data_publicacao", data_especifica)
+            elif data_inicio and data_fim:
+                query = query.gte("data_publicacao", data_inicio).lte("data_publicacao", data_fim)
+            elif data_inicio:
+                query = query.gte("data_publicacao", data_inicio)
+            elif data_fim:
+                query = query.lte("data_publicacao", data_fim)
             
             result = query.order("data_extracao", desc=True).limit(limite).execute()
             return result.data

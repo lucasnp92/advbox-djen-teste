@@ -126,20 +126,29 @@ def testar_sistema():
 @app.route('/extrair', methods=['POST'])
 def executar_extracao():
     """Endpoint para executar extração manual"""
-    def extrair_async():
-        try:
-            logger.info("🚀 Iniciando extração via API webhook...")
-            resultado = extractor.executar_extracao_diaria()
-            logger.info(f"✅ Extração concluída via webhook: {resultado}")
-        except Exception as e:
-            logger.error(f"❌ Erro na extração via webhook: {e}")
-    
     try:
         if not extractor:
             return jsonify({
                 'status': 'erro',
                 'erro': 'Sistema não inicializado'
             }), 500
+        
+        # Obter parâmetros do POST
+        data = request.get_json() or {}
+        data_inicio = data.get('dataInicio')
+        data_fim = data.get('dataFim')
+        tipo = data.get('tipo', 'diaria')
+        
+        def extrair_async():
+            try:
+                logger.info(f"🚀 Iniciando extração {tipo}: {data_inicio} até {data_fim}")
+                resultado = extractor.executar_extracao_diaria(
+                    data_inicio=data_inicio,
+                    data_fim=data_fim
+                )
+                logger.info(f"✅ Extração concluída: {resultado}")
+            except Exception as e:
+                logger.error(f"❌ Erro na extração: {e}")
         
         # Executar extração em thread separada
         thread = threading.Thread(target=extrair_async)
@@ -148,7 +157,7 @@ def executar_extracao():
         
         return jsonify({
             'status': 'sucesso',
-            'mensagem': 'Extração iniciada em segundo plano',
+            'mensagem': f'Extração {tipo} iniciada para período {data_inicio} até {data_fim}',
             'timestamp': datetime.now().isoformat()
         })
         
@@ -169,12 +178,16 @@ def get_intimacoes():
         # Parâmetros opcionais
         limite = request.args.get('limit', 10, type=int)
         data = request.args.get('data')
+        data_inicio = request.args.get('data_inicio')
+        data_fim = request.args.get('data_fim')
         eduardo_unico = request.args.get('eduardo_unico', 'false').lower() == 'true'
         
         # Buscar intimações no Supabase
         intimacoes = extractor.supabase_client.buscar_intimacoes(
             limite=limite,
-            data_especifica=data
+            data_especifica=data,
+            data_inicio=data_inicio,
+            data_fim=data_fim
         )
         
         # Filtrar por Eduardo único se solicitado
